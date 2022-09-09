@@ -1,0 +1,757 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1AAF54C8A10296A3433D160F /* Pods_PushBoxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD871CD535CE2E107739926A /* Pods_PushBoxTests.framework */; };
+		402C3B6D45E20B661CD21A50 /* Pods_PushBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88B9BB6B2C2643C5D0B89E3D /* Pods_PushBox.framework */; };
+		7090934928C9FEFE00BC55DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7090934828C9FEFE00BC55DB /* AppDelegate.swift */; };
+		7090934B28C9FEFE00BC55DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7090934A28C9FEFE00BC55DB /* SceneDelegate.swift */; };
+		7090935228C9FF0100BC55DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7090935128C9FF0100BC55DB /* Assets.xcassets */; };
+		7090935528C9FF0100BC55DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7090935328C9FF0100BC55DB /* LaunchScreen.storyboard */; };
+		7090936028C9FF0200BC55DB /* PushBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7090935F28C9FF0200BC55DB /* PushBoxTests.swift */; };
+		7090936A28C9FF0200BC55DB /* PushBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7090936928C9FF0200BC55DB /* PushBoxUITests.swift */; };
+		7090936C28C9FF0200BC55DB /* PushBoxUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7090936B28C9FF0200BC55DB /* PushBoxUITestsLaunchTests.swift */; };
+		7090937928C9FF8700BC55DB /* PushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7090937828C9FF8700BC55DB /* PushViewController.swift */; };
+		7090937B28C9FFB000BC55DB /* OperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7090937A28C9FFB000BC55DB /* OperationView.swift */; };
+		70B1AB8C28CADBF3009F7ED7 /* OuterImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1AB8B28CADBF3009F7ED7 /* OuterImageView.swift */; };
+		C0D2A77C7853DB3184DB8DFA /* Pods_PushBox_PushBoxUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88344011F01BA12A554B5E8D /* Pods_PushBox_PushBoxUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7090935C28C9FF0200BC55DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7090933D28C9FEFD00BC55DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7090934428C9FEFE00BC55DB;
+			remoteInfo = PushBox;
+		};
+		7090936628C9FF0200BC55DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7090933D28C9FEFD00BC55DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7090934428C9FEFE00BC55DB;
+			remoteInfo = PushBox;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1968D5522CF7A35C5986A089 /* Pods-PushBox-PushBoxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushBox-PushBoxUITests.release.xcconfig"; path = "Target Support Files/Pods-PushBox-PushBoxUITests/Pods-PushBox-PushBoxUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7090934528C9FEFE00BC55DB /* PushBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7090934828C9FEFE00BC55DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7090934A28C9FEFE00BC55DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7090935128C9FF0100BC55DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7090935428C9FF0100BC55DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7090935628C9FF0100BC55DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7090935B28C9FF0200BC55DB /* PushBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PushBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7090935F28C9FF0200BC55DB /* PushBoxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushBoxTests.swift; sourceTree = "<group>"; };
+		7090936528C9FF0200BC55DB /* PushBoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PushBoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7090936928C9FF0200BC55DB /* PushBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushBoxUITests.swift; sourceTree = "<group>"; };
+		7090936B28C9FF0200BC55DB /* PushBoxUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushBoxUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7090937828C9FF8700BC55DB /* PushViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushViewController.swift; sourceTree = "<group>"; };
+		7090937A28C9FFB000BC55DB /* OperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationView.swift; sourceTree = "<group>"; };
+		70B1AB8B28CADBF3009F7ED7 /* OuterImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuterImageView.swift; sourceTree = "<group>"; };
+		7A523B2AC100AC905C858233 /* Pods-PushBoxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushBoxTests.debug.xcconfig"; path = "Target Support Files/Pods-PushBoxTests/Pods-PushBoxTests.debug.xcconfig"; sourceTree = "<group>"; };
+		88344011F01BA12A554B5E8D /* Pods_PushBox_PushBoxUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PushBox_PushBoxUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		88B9BB6B2C2643C5D0B89E3D /* Pods_PushBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PushBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E90B79C19C5A14C781D1E4C /* Pods-PushBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushBox.debug.xcconfig"; path = "Target Support Files/Pods-PushBox/Pods-PushBox.debug.xcconfig"; sourceTree = "<group>"; };
+		DA4AB861802FAD970D12352F /* Pods-PushBox-PushBoxUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushBox-PushBoxUITests.debug.xcconfig"; path = "Target Support Files/Pods-PushBox-PushBoxUITests/Pods-PushBox-PushBoxUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DB9231E4D515EDF248CA27A4 /* Pods-PushBoxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushBoxTests.release.xcconfig"; path = "Target Support Files/Pods-PushBoxTests/Pods-PushBoxTests.release.xcconfig"; sourceTree = "<group>"; };
+		DD871CD535CE2E107739926A /* Pods_PushBoxTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PushBoxTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3708879B02161199945D8F5 /* Pods-PushBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushBox.release.xcconfig"; path = "Target Support Files/Pods-PushBox/Pods-PushBox.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7090934228C9FEFE00BC55DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				402C3B6D45E20B661CD21A50 /* Pods_PushBox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7090935828C9FF0200BC55DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AAF54C8A10296A3433D160F /* Pods_PushBoxTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7090936228C9FF0200BC55DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0D2A77C7853DB3184DB8DFA /* Pods_PushBox_PushBoxUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3DF5BE02275CE92931C8F803 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8E90B79C19C5A14C781D1E4C /* Pods-PushBox.debug.xcconfig */,
+				F3708879B02161199945D8F5 /* Pods-PushBox.release.xcconfig */,
+				DA4AB861802FAD970D12352F /* Pods-PushBox-PushBoxUITests.debug.xcconfig */,
+				1968D5522CF7A35C5986A089 /* Pods-PushBox-PushBoxUITests.release.xcconfig */,
+				7A523B2AC100AC905C858233 /* Pods-PushBoxTests.debug.xcconfig */,
+				DB9231E4D515EDF248CA27A4 /* Pods-PushBoxTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7090933C28C9FEFD00BC55DB = {
+			isa = PBXGroup;
+			children = (
+				7090934728C9FEFE00BC55DB /* PushBox */,
+				7090935E28C9FF0200BC55DB /* PushBoxTests */,
+				7090936828C9FF0200BC55DB /* PushBoxUITests */,
+				7090934628C9FEFE00BC55DB /* Products */,
+				3DF5BE02275CE92931C8F803 /* Pods */,
+				B0FBDCAB15D940C3D61C8A00 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7090934628C9FEFE00BC55DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7090934528C9FEFE00BC55DB /* PushBox.app */,
+				7090935B28C9FF0200BC55DB /* PushBoxTests.xctest */,
+				7090936528C9FF0200BC55DB /* PushBoxUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7090934728C9FEFE00BC55DB /* PushBox */ = {
+			isa = PBXGroup;
+			children = (
+				7090934828C9FEFE00BC55DB /* AppDelegate.swift */,
+				7090934A28C9FEFE00BC55DB /* SceneDelegate.swift */,
+				7090937828C9FF8700BC55DB /* PushViewController.swift */,
+				7090937A28C9FFB000BC55DB /* OperationView.swift */,
+				70B1AB8B28CADBF3009F7ED7 /* OuterImageView.swift */,
+				7090935128C9FF0100BC55DB /* Assets.xcassets */,
+				7090935328C9FF0100BC55DB /* LaunchScreen.storyboard */,
+				7090935628C9FF0100BC55DB /* Info.plist */,
+			);
+			path = PushBox;
+			sourceTree = "<group>";
+		};
+		7090935E28C9FF0200BC55DB /* PushBoxTests */ = {
+			isa = PBXGroup;
+			children = (
+				7090935F28C9FF0200BC55DB /* PushBoxTests.swift */,
+			);
+			path = PushBoxTests;
+			sourceTree = "<group>";
+		};
+		7090936828C9FF0200BC55DB /* PushBoxUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7090936928C9FF0200BC55DB /* PushBoxUITests.swift */,
+				7090936B28C9FF0200BC55DB /* PushBoxUITestsLaunchTests.swift */,
+			);
+			path = PushBoxUITests;
+			sourceTree = "<group>";
+		};
+		B0FBDCAB15D940C3D61C8A00 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88B9BB6B2C2643C5D0B89E3D /* Pods_PushBox.framework */,
+				88344011F01BA12A554B5E8D /* Pods_PushBox_PushBoxUITests.framework */,
+				DD871CD535CE2E107739926A /* Pods_PushBoxTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7090934428C9FEFE00BC55DB /* PushBox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7090936F28C9FF0200BC55DB /* Build configuration list for PBXNativeTarget "PushBox" */;
+			buildPhases = (
+				638AE6FDD668CBCAD9148414 /* [CP] Check Pods Manifest.lock */,
+				7090934128C9FEFE00BC55DB /* Sources */,
+				7090934228C9FEFE00BC55DB /* Frameworks */,
+				7090934328C9FEFE00BC55DB /* Resources */,
+				B5CF1F10EB10764D159BD550 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PushBox;
+			productName = PushBox;
+			productReference = 7090934528C9FEFE00BC55DB /* PushBox.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7090935A28C9FF0200BC55DB /* PushBoxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7090937228C9FF0200BC55DB /* Build configuration list for PBXNativeTarget "PushBoxTests" */;
+			buildPhases = (
+				DFC330768D39BAF87CCBF720 /* [CP] Check Pods Manifest.lock */,
+				7090935728C9FF0200BC55DB /* Sources */,
+				7090935828C9FF0200BC55DB /* Frameworks */,
+				7090935928C9FF0200BC55DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7090935D28C9FF0200BC55DB /* PBXTargetDependency */,
+			);
+			name = PushBoxTests;
+			productName = PushBoxTests;
+			productReference = 7090935B28C9FF0200BC55DB /* PushBoxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7090936428C9FF0200BC55DB /* PushBoxUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7090937528C9FF0200BC55DB /* Build configuration list for PBXNativeTarget "PushBoxUITests" */;
+			buildPhases = (
+				EB9A4753D80AF2CCB99C4953 /* [CP] Check Pods Manifest.lock */,
+				7090936128C9FF0200BC55DB /* Sources */,
+				7090936228C9FF0200BC55DB /* Frameworks */,
+				7090936328C9FF0200BC55DB /* Resources */,
+				669FFF47A1A0394022C831D3 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7090936728C9FF0200BC55DB /* PBXTargetDependency */,
+			);
+			name = PushBoxUITests;
+			productName = PushBoxUITests;
+			productReference = 7090936528C9FF0200BC55DB /* PushBoxUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7090933D28C9FEFD00BC55DB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					7090934428C9FEFE00BC55DB = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					7090935A28C9FF0200BC55DB = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 7090934428C9FEFE00BC55DB;
+					};
+					7090936428C9FF0200BC55DB = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 7090934428C9FEFE00BC55DB;
+					};
+				};
+			};
+			buildConfigurationList = 7090934028C9FEFD00BC55DB /* Build configuration list for PBXProject "PushBox" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7090933C28C9FEFD00BC55DB;
+			productRefGroup = 7090934628C9FEFE00BC55DB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7090934428C9FEFE00BC55DB /* PushBox */,
+				7090935A28C9FF0200BC55DB /* PushBoxTests */,
+				7090936428C9FF0200BC55DB /* PushBoxUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7090934328C9FEFE00BC55DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7090935528C9FF0100BC55DB /* LaunchScreen.storyboard in Resources */,
+				7090935228C9FF0100BC55DB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7090935928C9FF0200BC55DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7090936328C9FF0200BC55DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		638AE6FDD668CBCAD9148414 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PushBox-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		669FFF47A1A0394022C831D3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PushBox-PushBoxUITests/Pods-PushBox-PushBoxUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PushBox-PushBoxUITests/Pods-PushBox-PushBoxUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PushBox-PushBoxUITests/Pods-PushBox-PushBoxUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5CF1F10EB10764D159BD550 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PushBox/Pods-PushBox-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PushBox/Pods-PushBox-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PushBox/Pods-PushBox-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFC330768D39BAF87CCBF720 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PushBoxTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB9A4753D80AF2CCB99C4953 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PushBox-PushBoxUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7090934128C9FEFE00BC55DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7090934928C9FEFE00BC55DB /* AppDelegate.swift in Sources */,
+				7090937B28C9FFB000BC55DB /* OperationView.swift in Sources */,
+				7090937928C9FF8700BC55DB /* PushViewController.swift in Sources */,
+				7090934B28C9FEFE00BC55DB /* SceneDelegate.swift in Sources */,
+				70B1AB8C28CADBF3009F7ED7 /* OuterImageView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7090935728C9FF0200BC55DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7090936028C9FF0200BC55DB /* PushBoxTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7090936128C9FF0200BC55DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7090936C28C9FF0200BC55DB /* PushBoxUITestsLaunchTests.swift in Sources */,
+				7090936A28C9FF0200BC55DB /* PushBoxUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7090935D28C9FF0200BC55DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7090934428C9FEFE00BC55DB /* PushBox */;
+			targetProxy = 7090935C28C9FF0200BC55DB /* PBXContainerItemProxy */;
+		};
+		7090936728C9FF0200BC55DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7090934428C9FEFE00BC55DB /* PushBox */;
+			targetProxy = 7090936628C9FF0200BC55DB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7090935328C9FF0100BC55DB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7090935428C9FF0100BC55DB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7090936D28C9FF0200BC55DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7090936E28C9FF0200BC55DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7090937028C9FF0200BC55DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E90B79C19C5A14C781D1E4C /* Pods-PushBox.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AC376MY52H;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PushBox/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = wuhuijuan.PushBox;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7090937128C9FF0200BC55DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3708879B02161199945D8F5 /* Pods-PushBox.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AC376MY52H;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PushBox/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = wuhuijuan.PushBox;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7090937328C9FF0200BC55DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A523B2AC100AC905C858233 /* Pods-PushBoxTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AC376MY52H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = wuhuijuan.PushBoxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PushBox.app/PushBox";
+			};
+			name = Debug;
+		};
+		7090937428C9FF0200BC55DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB9231E4D515EDF248CA27A4 /* Pods-PushBoxTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AC376MY52H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = wuhuijuan.PushBoxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PushBox.app/PushBox";
+			};
+			name = Release;
+		};
+		7090937628C9FF0200BC55DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA4AB861802FAD970D12352F /* Pods-PushBox-PushBoxUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AC376MY52H;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = wuhuijuan.PushBoxUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PushBox;
+			};
+			name = Debug;
+		};
+		7090937728C9FF0200BC55DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1968D5522CF7A35C5986A089 /* Pods-PushBox-PushBoxUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AC376MY52H;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = wuhuijuan.PushBoxUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PushBox;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7090934028C9FEFD00BC55DB /* Build configuration list for PBXProject "PushBox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7090936D28C9FF0200BC55DB /* Debug */,
+				7090936E28C9FF0200BC55DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7090936F28C9FF0200BC55DB /* Build configuration list for PBXNativeTarget "PushBox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7090937028C9FF0200BC55DB /* Debug */,
+				7090937128C9FF0200BC55DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7090937228C9FF0200BC55DB /* Build configuration list for PBXNativeTarget "PushBoxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7090937328C9FF0200BC55DB /* Debug */,
+				7090937428C9FF0200BC55DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7090937528C9FF0200BC55DB /* Build configuration list for PBXNativeTarget "PushBoxUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7090937628C9FF0200BC55DB /* Debug */,
+				7090937728C9FF0200BC55DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7090933D28C9FEFD00BC55DB /* Project object */;
+}

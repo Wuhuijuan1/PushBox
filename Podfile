@@ -1,18 +1,18 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'Push Box' do
+target 'PushBox' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for Push Box
+  # Pods for PushBox
 
-  target 'Push BoxTests' do
+  target 'PushBoxTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
-  target 'Push BoxUITests' do
+  target 'PushBoxUITests' do
     # Pods for testing
   end
 
