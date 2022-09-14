@@ -20,6 +20,8 @@
 		7090937B28C9FFB000BC55DB /* OperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7090937A28C9FFB000BC55DB /* OperationView.swift */; };
 		70ACF17E28D163D1008D6781 /* DrawItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ACF17D28D163D1008D6781 /* DrawItem.swift */; };
 		70ACF18028D16423008D6781 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ACF17F28D16423008D6781 /* Array+Extension.swift */; };
+		70ACF18728D1B3D8008D6781 /* ModeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ACF18628D1B3D8008D6781 /* ModeController.swift */; };
+		70ACF18928D1B47B008D6781 /* OperateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ACF18828D1B47B008D6781 /* OperateView.swift */; };
 		70B1AB8C28CADBF3009F7ED7 /* OuterImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1AB8B28CADBF3009F7ED7 /* OuterImageView.swift */; };
 		70B1AB8E28CB0A1C009F7ED7 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1AB8D28CB0A1C009F7ED7 /* GameView.swift */; };
 		C0D2A77C7853DB3184DB8DFA /* Pods_PushBox_PushBoxUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88344011F01BA12A554B5E8D /* Pods_PushBox_PushBoxUITests.framework */; };
@@ -59,6 +61,8 @@
 		7090937A28C9FFB000BC55DB /* OperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationView.swift; sourceTree = "<group>"; };
 		70ACF17D28D163D1008D6781 /* DrawItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawItem.swift; sourceTree = "<group>"; };
 		70ACF17F28D16423008D6781 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		70ACF18628D1B3D8008D6781 /* ModeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeController.swift; sourceTree = "<group>"; };
+		70ACF18828D1B47B008D6781 /* OperateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OperateView.swift; path = ../controller/OperateView.swift; sourceTree = "<group>"; };
 		70B1AB8B28CADBF3009F7ED7 /* OuterImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuterImageView.swift; sourceTree = "<group>"; };
 		70B1AB8D28CB0A1C009F7ED7 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		7A523B2AC100AC905C858233 /* Pods-PushBoxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushBoxTests.debug.xcconfig"; path = "Target Support Files/Pods-PushBoxTests/Pods-PushBoxTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 		70ACF18128D16439008D6781 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				70ACF18828D1B47B008D6781 /* OperateView.swift */,
 				70B1AB8B28CADBF3009F7ED7 /* OuterImageView.swift */,
 				7090937A28C9FFB000BC55DB /* OperationView.swift */,
 				70B1AB8D28CB0A1C009F7ED7 /* GameView.swift */,
@@ -189,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				7090937828C9FF8700BC55DB /* PushViewController.swift */,
+				70ACF18628D1B3D8008D6781 /* ModeController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -443,9 +449,11 @@
 			files = (
 				70ACF17E28D163D1008D6781 /* DrawItem.swift in Sources */,
 				7090934928C9FEFE00BC55DB /* AppDelegate.swift in Sources */,
+				70ACF18928D1B47B008D6781 /* OperateView.swift in Sources */,
 				7090937B28C9FFB000BC55DB /* OperationView.swift in Sources */,
 				7090937928C9FF8700BC55DB /* PushViewController.swift in Sources */,
 				7090934B28C9FEFE00BC55DB /* SceneDelegate.swift in Sources */,
+				70ACF18728D1B3D8008D6781 /* ModeController.swift in Sources */,
 				70B1AB8E28CB0A1C009F7ED7 /* GameView.swift in Sources */,
 				70B1AB8C28CADBF3009F7ED7 /* OuterImageView.swift in Sources */,
 				70ACF18028D16423008D6781 /* Array+Extension.swift in Sources */,

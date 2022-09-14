@@ -8,7 +8,18 @@
 import Foundation
 import UIKit
 
+// MARK: - 对外接口
 extension GameView {
+    func resetUI() {
+        boxArr.removeAll()
+        emptyBoxArr.removeAll()
+        fullBoxArr.removeAll()
+        obstaclesArr.removeAll()
+        lineArr.removeAll()
+        personItem = nil
+        self.setNeedsDisplay()
+    }
+    
     func updateUI(with direction: OperationView.Direction) {
         guard let personItem = personItem else { return }
         var nearArr: [DrawItem] = []
@@ -72,7 +83,9 @@ extension GameView {
         updateBoxStatus()
         self.setNeedsDisplay()
     }
-    
+}
+
+extension GameView {
     private func updatePerson(with direction: OperationView.Direction, nearArr: [DrawItem]) {
         if nearArr.isEmpty {
             return
@@ -135,6 +148,14 @@ class GameView: UIView {
     private var personItem: DrawItem?
     private let itemWidth: CGFloat
     private let boxCount: Int
+    var obstaclesCount: Int = 5 {
+        didSet {
+            self.resetUI()
+        }
+    }
+    
+    var didSucceed: (() -> Void)?
+
     
     init(itemWidth: CGFloat = 24, boxCount: Int = 5) {
         self.itemWidth = itemWidth
@@ -160,6 +181,10 @@ class GameView: UIView {
         drawBox()
         drawPerson()
         drawObstacles()
+        
+        if fullBoxArr.count == boxCount, let didSucceed = didSucceed {
+            didSucceed()
+        }
     }
     
     private func drawObstacles() {
@@ -170,7 +195,7 @@ class GameView: UIView {
             }
             return
         }
-        for _ in 0...1 {
+        for _ in 0...obstaclesCount {
             let drawItem = DrawItem(
                 xIndex: Int(arc4random()) % (bottomIndex - topIndex - 2) + topIndex + 1,
                 yIndex: Int(arc4random()) % (rightIndex - leftIndex - 2) + leftIndex + 1)
@@ -276,12 +301,12 @@ extension GameView {
 
     func drawItem(item: DrawItem, mode: Mode) {
         let rect = CGRect(x: CGFloat(item.xIndex) * itemWidth, y: CGFloat(item.yIndex) * itemWidth, width: itemWidth, height: itemWidth)
-        if mode != .normal {
-            mode.image()?.draw(in: rect)
+        if mode == .empty {
+            let path = UIBezierPath(roundedRect: rect, cornerRadius: itemWidth / 4)
+            UIColor.green.set()
+            path.fill()
             return
         }
-        let path = UIBezierPath(rect: rect)
-        UIColor.red.set()
-        path.fill()
+        mode.image()?.draw(in: rect)
     }
 }

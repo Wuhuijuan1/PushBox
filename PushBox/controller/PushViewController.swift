@@ -10,10 +10,16 @@ import UIKit
 import SnapKit
 
 class PushViewController: UIViewController {
-    private let gameView = GameView(itemWidth: 36)
+    private let gameView = GameView(itemWidth: 28)
+    var obstaclesCount: Int = 5 {
+        didSet {
+            self.gameView.obstaclesCount = obstaclesCount
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         installUI()
+        bindViewModel()
     }
     
     private func installUI() {
@@ -38,5 +44,22 @@ class PushViewController: UIViewController {
             make.leading.trailing.top.equalTo(view.safeAreaLayoutGuide)
             make.bottom.equalTo(operationView.snp.top).offset(-40)
         }
+    }
+    
+    private func bindViewModel() {
+        gameView.didSucceed = { [weak self] in
+            guard let self = self else { return }
+            let alertVC = UIAlertController(title: "Congratulation!", message: "You have passed the level, please choose to restart or exit", preferredStyle: .alert)
+            let restart = UIAlertAction(title: "restart", style: .default) { _ in
+                self.gameView.resetUI()
+            }
+            let exit = UIAlertAction(title: "exit", style: .default) { _ in
+                self.navigationController?.popViewController(animated: true)
+            }
+            alertVC.addAction(exit)
+            alertVC.addAction(restart)
+            self.present(alertVC, animated: true, completion: nil)
+        }
+        
     }
 }
