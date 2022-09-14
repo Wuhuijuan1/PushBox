@@ -11,11 +11,11 @@ import UIKit
 class OperationView: UIView {
     private var directions: [Direction]
     private var minLength: CGFloat = 0
-    private let interval: Double = 1
+    private let interval: Double = 0.5
     public var didLongPress: (Direction, OperationView) -> Void
     
     /// 箭头大小
-    private let imageWidth: CGFloat = 40
+    private let imageWidth: CGFloat = 30
     /// 操作球大小
     private let rockerWidth: CGFloat = 40
     /// 触摸点
@@ -208,20 +208,13 @@ extension OperationView {
         touchPoint = point
         setNeedsDisplay()
         
-        timer.fireDate = Date().addingTimeInterval(interval)
+        timer.fireDate = Date()
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let point = touches.first?.location(in: self) else { return }
-        let preDirection = selectedDirection // 记录切换前方向
         touchPoint = point
         setNeedsDisplay()
-        
-        // 长按，且方向有变化，回调一次新方向
-        let currentDirection = selectedDirection
-        if let preDirection = preDirection, let currentDirection = currentDirection {
-            
-        }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
