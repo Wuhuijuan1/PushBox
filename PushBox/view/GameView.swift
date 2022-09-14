@@ -15,52 +15,52 @@ extension GameView {
         switch direction {
         case .left:
             let index = personItem.xIndex - 1
-            let item = DrawItem(xIndex: index, yIndex: personItem.yIndex, color: nil)
+            let item = DrawItem(xIndex: index, yIndex: personItem.yIndex)
             var nearItem = item
             while boxArr.isContains(nearItem) {
                 nearArr.append(nearItem)
-                nearItem = DrawItem(xIndex: nearItem.xIndex - 1, yIndex: nearItem.yIndex, color: nil)
+                nearItem = DrawItem(xIndex: nearItem.xIndex - 1, yIndex: nearItem.yIndex)
             }
-            if nearArr.last?.xIndex ?? rightIndex <= leftIndex + 1 {
+            if nearArr.last?.xIndex ?? rightIndex <= leftIndex + 1 || obstaclesArr.isContains(nearItem) {
                 nearArr.removeAll()
                 break
             }
             personItem.xIndex = index < leftIndex + 1 ? leftIndex + 1 : index
         case .right:
             let index = personItem.xIndex + 1
-            let item = DrawItem(xIndex: index, yIndex: personItem.yIndex, color: nil)
+            let item = DrawItem(xIndex: index, yIndex: personItem.yIndex)
             var nearItem = item
             while boxArr.isContains(nearItem) {
                 nearArr.append(nearItem)
-                nearItem = DrawItem(xIndex: nearItem.xIndex + 1, yIndex: nearItem.yIndex, color: nil)
+                nearItem = DrawItem(xIndex: nearItem.xIndex + 1, yIndex: nearItem.yIndex)
             }
-            if nearArr.last?.xIndex ?? leftIndex >= rightIndex - 1 {
+            if nearArr.last?.xIndex ?? leftIndex >= rightIndex - 1 || obstaclesArr.isContains(nearItem) {
                 nearArr.removeAll()
                 break
             }
             personItem.xIndex = index > rightIndex - 1 ? rightIndex - 1 : index
         case .up:
             let index = personItem.yIndex - 1
-            let item = DrawItem(xIndex: personItem.xIndex, yIndex: index, color: nil)
+            let item = DrawItem(xIndex: personItem.xIndex, yIndex: index)
             var nearItem = item
             while boxArr.isContains(nearItem) {
                 nearArr.append(nearItem)
-                nearItem = DrawItem(xIndex: nearItem.xIndex, yIndex: nearItem.yIndex - 1, color: nil)
+                nearItem = DrawItem(xIndex: nearItem.xIndex, yIndex: nearItem.yIndex - 1)
             }
-            if nearArr.last?.yIndex ?? bottomIndex <= topIndex + 1 {
+            if nearArr.last?.yIndex ?? bottomIndex <= topIndex + 1 || obstaclesArr.isContains(nearItem) {
                 nearArr.removeAll()
                 break
             }
             personItem.yIndex = index < topIndex + 1 ? topIndex + 1 : index
         case .down:
             let index = personItem.yIndex + 1
-            let item = DrawItem(xIndex: personItem.xIndex, yIndex: index, color: nil)
+            let item = DrawItem(xIndex: personItem.xIndex, yIndex: index)
             var nearItem = item
             while boxArr.isContains(nearItem) {
                 nearArr.append(nearItem)
-                nearItem = DrawItem(xIndex: nearItem.xIndex, yIndex: nearItem.yIndex + 1, color: nil)
+                nearItem = DrawItem(xIndex: nearItem.xIndex, yIndex: nearItem.yIndex + 1)
             }
-            if nearArr.last?.yIndex ?? topIndex >= bottomIndex - 1 {
+            if nearArr.last?.yIndex ?? topIndex >= bottomIndex - 1 || obstaclesArr.isContains(nearItem) {
                 nearArr.removeAll()
                 break
             }
@@ -104,10 +104,7 @@ extension GameView {
         emptyBoxArr.forEach { [weak self] item in
             guard let self = self else { return }
             if self.boxArr.isContains(item) {
-                item.color = self.fullBoxColor
                 self.fullBoxArr.append(item)
-            } else {
-                item.color = emptyBoxColor
             }
         }
     }
@@ -133,6 +130,7 @@ class GameView: UIView {
     private var emptyBoxArr: [DrawItem] = []
     private var boxArr: [DrawItem] = []
     private var fullBoxArr: [DrawItem] = []
+    private var obstaclesArr: [DrawItem] = []
     
     private var personItem: DrawItem?
     private let itemWidth: CGFloat
@@ -142,7 +140,7 @@ class GameView: UIView {
         self.itemWidth = itemWidth
         self.boxCount = boxCount
         super.init(frame: CGRect.zero)
-        backgroundColor = .black.withAlphaComponent(0.5)
+        backgroundColor = .clear
     }
     
     required init?(coder: NSCoder) {
@@ -153,7 +151,7 @@ class GameView: UIView {
         coloum = Int(rect.height / itemWidth)
         row = Int(rect.width / itemWidth)
         if personItem == nil {
-            personItem = DrawItem(xIndex: centerXIndex, yIndex: centerYIndex, color: personColor)
+            personItem = DrawItem(xIndex: centerXIndex, yIndex: centerYIndex)
         }
 
         drawLine()
@@ -161,14 +159,37 @@ class GameView: UIView {
         drawEmptyBox()
         drawBox()
         drawPerson()
+        drawObstacles()
+    }
+    
+    private func drawObstacles() {
+        // 两个障碍物
+        if !obstaclesArr.isEmpty {
+            obstaclesArr.forEach { [weak self] item in
+                self?.drawItem(item: item, mode: .obstacles)
+            }
+            return
+        }
+        for _ in 0...1 {
+            let drawItem = DrawItem(
+                xIndex: Int(arc4random()) % (bottomIndex - topIndex - 2) + topIndex + 1,
+                yIndex: Int(arc4random()) % (rightIndex - leftIndex - 2) + leftIndex + 1)
+            while boxArr.isContains(drawItem) || emptyBoxArr.isContains(drawItem) || personItem ?? DrawItem() == drawItem || obstaclesArr.isContains(drawItem) {
+                drawItem.xIndex = Int(arc4random()) % (bottomIndex - topIndex - 2) + topIndex + 1
+                drawItem.yIndex = Int(arc4random()) % (rightIndex - leftIndex - 2) + leftIndex + 1
+            }
+            obstaclesArr.append(drawItem)
+            self.drawItem(item: drawItem, mode: .obstacles)
+        }
+        
     }
 }
 
-// MARK: - draw box
+// MARK: - draw
 extension GameView {
     private func drawFullBox() {
         for item in fullBoxArr {
-            self.drawItem(item: item)
+            self.drawItem(item: item, mode: .full)
         }
     }
     
@@ -176,7 +197,7 @@ extension GameView {
         if emptyBoxArr.count >= boxCount {
             for item in emptyBoxArr {
                 if !self.fullBoxArr.isContains(item) {
-                    self.drawItem(item: item)
+                    self.drawItem(item: item, mode: .empty)
                 }
             }
             return
@@ -185,14 +206,14 @@ extension GameView {
         while index < boxCount {
             let yIndex = Int(arc4random()) % (bottomIndex - topIndex - 2) + topIndex + 1
             let xIndex = Int(arc4random()) % (rightIndex - leftIndex - 2) + leftIndex + 1
-            let item = DrawItem(xIndex: xIndex, yIndex: yIndex, color: emptyBoxColor)
+            let item = DrawItem(xIndex: xIndex, yIndex: yIndex)
             if !emptyBoxArr.isContains(item) {
                 emptyBoxArr.append(item)
                 index += 1
             }
         }
         emptyBoxArr.forEach { [weak self] item in
-            self?.drawItem(item: item)
+            self?.drawItem(item: item, mode: .empty)
         }
     }
     
@@ -200,7 +221,7 @@ extension GameView {
         if boxArr.count == boxCount {
             for item in boxArr {
                 if !self.fullBoxArr.isContains(item) {
-                    self.drawItem(item: item)
+                    self.drawItem(item: item, mode: .normal)
                 }
             }
             return
@@ -209,65 +230,58 @@ extension GameView {
         while index < boxCount {
             let yIndex = Int(arc4random()) % (bottomIndex - topIndex - 4) + topIndex + 2
             let xIndex = Int(arc4random()) % (rightIndex - leftIndex - 4) + leftIndex + 2
-            let item = DrawItem(xIndex: xIndex, yIndex: yIndex, color: boxColor)
+            let item = DrawItem(xIndex: xIndex, yIndex: yIndex)
             if !boxArr.isContains(item) && !emptyBoxArr.isContains(item) {
                 boxArr.append(item)
                 index += 1
             }
         }
         boxArr.forEach { [weak self] item in
-            self?.drawItem(item: item)
+            self?.drawItem(item: item, mode: .normal)
         }
     }
     
     private func drawLine() {
         guard lineArr.isEmpty else {
             lineArr.forEach { [weak self] item in
-                self?.drawItem(item: item)
+                self?.drawItem(item: item, mode: .line)
             }
             return
         }
 
         for i in leftIndex...rightIndex {
-            let item1 = DrawItem(xIndex: i, yIndex: topIndex, color: lineColor)
-            let item2 = DrawItem(xIndex: i, yIndex: bottomIndex, color: lineColor)
+            let item1 = DrawItem(xIndex: i, yIndex: topIndex)
+            let item2 = DrawItem(xIndex: i, yIndex: bottomIndex)
             lineArr += [item1, item2]
         }
         for j in topIndex...bottomIndex {
-            let item1 = DrawItem(xIndex: leftIndex, yIndex: j, color: lineColor)
-            let item2 = DrawItem(xIndex: rightIndex, yIndex: j, color: lineColor)
+            let item1 = DrawItem(xIndex: leftIndex, yIndex: j)
+            let item2 = DrawItem(xIndex: rightIndex, yIndex: j)
             lineArr += [item1, item2]
         }
         
         lineArr.forEach { [weak self] item in
-            self?.drawItem(item: item)
+            self?.drawItem(item: item, mode: .line)
         }
     }
 
     private func drawPerson() {
         guard let personItem = personItem else { return }
-        let rect = CGRect(x: CGFloat(personItem.xIndex) * itemWidth, y: CGFloat(personItem.yIndex) * itemWidth, width: itemWidth, height: itemWidth)
-        
-        let headWidth = itemWidth * 0.2
-        let headRect = CGRect(x: rect.midX - headWidth, y: rect.minY + 2, width: headWidth * 2, height: headWidth * 2)
-        let headPath = UIBezierPath(roundedRect: headRect, cornerRadius: headWidth)
-        headPath.lineWidth = 3
-        headPath.move(to: CGPoint(x: rect.minX, y: rect.midY + 2))
-        headPath.addLine(to: CGPoint(x: rect.minX + itemWidth, y: rect.midY + 2))
-        headPath.move(to: CGPoint(x: headRect.midX, y: headRect.maxY))
-        headPath.addLine(to: CGPoint(x: rect.midX, y: rect.midY + 2))
-        headPath.addLine(to: CGPoint(x: rect.minX + 4, y: rect.maxY))
-        headPath.move(to: CGPoint(x: headRect.midX, y: headRect.maxY))
-        headPath.addLine(to: CGPoint(x: rect.maxX - 4, y: rect.maxY))
-
-        UIColor.blue.set()
-        headPath.stroke()
+        while boxArr.isContains(personItem) {
+            personItem.xIndex = Int(arc4random()) % (bottomIndex - topIndex - 2) + topIndex + 1
+            personItem.yIndex = Int(arc4random()) % (rightIndex - leftIndex - 2) + leftIndex + 1
+        }
+        drawItem(item: personItem, mode: .person)
     }
 
-    func drawItem(item: DrawItem) {
+    func drawItem(item: DrawItem, mode: Mode) {
         let rect = CGRect(x: CGFloat(item.xIndex) * itemWidth, y: CGFloat(item.yIndex) * itemWidth, width: itemWidth, height: itemWidth)
+        if mode != .normal {
+            mode.image()?.draw(in: rect)
+            return
+        }
         let path = UIBezierPath(rect: rect)
-        item.color?.set()
+        UIColor.red.set()
         path.fill()
     }
 }
